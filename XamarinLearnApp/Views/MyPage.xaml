@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinLearnApp.Views.MyPage"
+             Title="My Page"
+             >
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Entry 
+            x:Name="title" 
+            Placeholder="Enter title"
+            Grid.Row="0"
+            Grid.ColumnSpan="2"
+            />
+        <Editor 
+            x:Name="description" 
+            Placeholder="Enter description"
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            />
+        <StackLayout Grid.Row="2" Grid.ColumnSpan="2">
+            <Label
+                Text="Publish or Not" 
+                FontSize="16" 
+            />
+            <Switch
+                x:Name="publish"
+                HorizontalOptions="Start"
+                IsToggled="false" 
+            />
+        </StackLayout>
+        <StackLayout Grid.Row="3" Grid.ColumnSpan="2">
+            <Label
+            Text="Select Category"
+            FontSize="16"
+            />
+            <Picker x:Name="category" Grid.Row="4">
+                <Picker.Items SelectedIndex="-1">
+                    <x:String>Apple</x:String>
+                    <x:String>Microsoft</x:String>
+                    <x:String>Dell</x:String>
+                    <x:String>Amazon</x:String>
+                </Picker.Items>
+            </Picker>
+        </StackLayout>
+        <StackLayout Grid.Row="5">
+            <Button Text="Send" Clicked="SendButton_Clicked" />
+        </StackLayout>
+        <StackLayout Grid.Row="5" Grid.Column="1">
+            <Button Text="Clear" Clicked="ClearButton_Clicked" BackgroundColor="LightCoral" />
+        </StackLayout>
+    </Grid>
+</ContentPage>
