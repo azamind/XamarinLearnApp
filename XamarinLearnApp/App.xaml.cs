@@ -2,7 +2,6 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XamarinLearnApp.Services;
-using XamarinLearnApp.Views;
 
 namespace XamarinLearnApp
 {
@@ -13,7 +12,7 @@ namespace XamarinLearnApp
         {
             InitializeComponent();
 
-            //DependencyService.Register<MockDataStore>();
+            DependencyService.Register<ToDoMockService>();
             MainPage = new AppShell();
         }
 
